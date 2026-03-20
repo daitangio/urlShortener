@@ -18,7 +18,8 @@ RUN apt update \
     && apt install -y git locales \
                           libmariadbclient-dev \
                           net-tools \
-                          curl iproute2
+                          curl iproute2 \
+                          poppler-utils
 
 # RUN apt upgrade
 
@@ -42,9 +43,6 @@ WORKDIR /${APPNAME}/tinyurl
 RUN pip3 install -r ../requirements.txt
 RUN cp tinyurl/settingslocal.py.example tinyurl/settingslocal.py
 
-## Add the wait script to the image
-ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.7.2/wait /wait
-RUN chmod +x /wait
 
 # check with
 # docker inspect --format='{{json .State.Health}}' urlshortener
@@ -53,4 +51,4 @@ HEALTHCHECK --interval=3s --timeout=2s --retries=1 CMD curl --fail http://localh
 RUN python manage.py migrate
 RUN python manage.py shell -c "from django.contrib.auth import get_user_model; get_user_model().objects.filter(username='${ADMINUSER}').exists() or get_user_model().objects.create_superuser('${ADMINUSER}', '${ADMINMAIL}', '${ADMINPASS}')"
 EXPOSE 8000
-CMD /wait && python manage.py runserver 0.0.0.0:8000
+CMD python manage.py runserver 0.0.0.0:8000

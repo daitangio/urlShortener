@@ -1,4 +1,4 @@
-django==6.0.3
+django>=6.0.3,<7
 short_url
 captcha==0.3
 cryptography>=2.8
@@ -10,4 +10,10 @@ uritemplate
 pyyaml
 
 # form
-django-form-builder==0.13
+# django-form-builder>=1.2.2
+
+# sass and bootstrap italia
+django-sass-processor
+libsass
+#django-bootstrap-italia
+#django-unical-bootstrap-italia

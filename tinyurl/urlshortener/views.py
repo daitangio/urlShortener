@@ -6,7 +6,6 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.utils.translation import gettext as _
-from django_form_builder.forms import BaseDynamicForm
 from rest_framework import viewsets
 from rest_framework import permissions
 

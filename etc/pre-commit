@@ -3,5 +3,5 @@
 set -xe
 black $(git ls-files '*.py')
 #coverage run --source='.' manage.py test vacations || echo "Some tests failed"
-python manage.py test vacations
+python manage.py test
 pylint  --fail-under=6 $(git ls-files '*.py') || echo "Your code sucks"
