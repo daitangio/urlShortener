@@ -1,6 +1,8 @@
 urlShortener
 -------
 
+Forked from https://github.com/UniversitaDellaCalabria/urlShortener
+
 A Django URL Shortener based on python [short_url](https://github.com/Alir3z4/python-short_url).
 
 It uses a bit-shuffling approach is used to avoid generating consecutive, predictable URLs. However, the algorithm is deterministic and will guarantee that no collisions will occur.
