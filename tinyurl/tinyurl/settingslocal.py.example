@@ -7,7 +7,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
+# See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'uilbg9^$cs3427dhrppmgibuiof6yc-2_y#6sg^!mzmioo6=-l'
@@ -50,7 +50,7 @@ if 'rest_framework' in INSTALLED_APPS:
     }
 
 # Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+# https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -74,6 +74,9 @@ MIDDLEWARE = [
 ]
 
 # Change these in production use
+ENCRYPTION_SECRET = b'your_secret'
+ENCRYPTION_SALT = b'your_salt'
+
 CAPTCHA_SECRET = b'your_secret'
 CAPTCHA_SALT = b'your_salt'
 CAPTCHA_LENGTH = 6
