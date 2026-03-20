@@ -4,3 +4,4 @@ tinyurl/db.sqlite3
 tinyurl/tinyurl/settingslocal.py
 static/
 *.log
+db.sqlite3

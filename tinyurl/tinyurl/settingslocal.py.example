@@ -30,9 +30,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    
     'sass_processor',
-    'bootstrap_italia_template',
+    'bootstrap_italia_template', # contenuto in design-django-theme
     'django_unical_bootstrap_italia',
     
     'urlshortener',

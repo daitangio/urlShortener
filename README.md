@@ -37,7 +37,7 @@ cd tinyurl
 cp tinyurl/settingslocal.py.example tinyurl/settingslocal.py
 
 ./manage migrate
-./manage createsuperuser admin
+./manage createsuperuser --username admin
 ./manage compilescss
 ./manage collectstatic
 ````

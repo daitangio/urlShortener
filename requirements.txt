@@ -16,4 +16,4 @@ pyyaml
 django-sass-processor
 libsass
 #django-bootstrap-italia
-#django-unical-bootstrap-italia
+django-unical-bootstrap-italia==2.0.1

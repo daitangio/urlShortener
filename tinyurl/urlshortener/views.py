@@ -55,13 +55,12 @@ def urlshortener(request):
 
     if request.method == 'GET':
         form = UrlShortenerForm(initial=initial)
-        form_captcha = BaseDynamicForm.get_form(constructor_dict=constructor_dict)
+        form_captcha = None
     elif request.method == 'POST':
         # clean oldies
         clean_expired_urls()
         form = UrlShortenerForm(data=request.POST)
-        form_captcha = BaseDynamicForm.get_form(constructor_dict=constructor_dict,
-                                                data=request.POST)
+        form_captcha = None
         
         if not all((form.is_valid(), form_captcha.is_valid())):
             messages.add_message(request, messages.ERROR,
